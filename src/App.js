@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-
 import Posts from './components/Posts'
 import PostLoadingComponent from './components/PostLoading'
-
 import axios from './api'
 
 export default function App() {
