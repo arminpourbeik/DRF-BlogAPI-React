@@ -7,12 +7,14 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
-const Posts = (props) => {
+function Posts(props) {
   const { posts } = props
   const classes = useStyles()
+
   if (!posts || posts.length === 0) return <p>Can not find any posts, sorry</p>
+
   return (
-    <React.Fragment>
+    <>
       <Container maxWidth='md' component='main'>
         <Grid container spacing={5} alignItems='flex-end'>
           {posts.map((post) => {
@@ -50,7 +52,7 @@ const Posts = (props) => {
           })}
         </Grid>
       </Container>
-    </React.Fragment>
+    </>
   )
 }
 

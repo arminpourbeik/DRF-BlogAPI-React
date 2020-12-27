@@ -3,7 +3,7 @@ import Posts from './components/Posts'
 import PostLoadingComponent from './components/PostLoading'
 import axios from './api'
 
-export default function App() {
+function App() {
   // State
   const [appState, setAppState] = useState({ loading: false, posts: null })
   const PostsOrLoading = PostLoadingComponent(Posts)
@@ -19,9 +19,10 @@ export default function App() {
       console.log(posts)
     }
 
-    // Get the post request
+    // POST request to get posts
     getPosts()
 
+    // Cleanup function
     return () => {}
   }, [setAppState])
 
@@ -32,3 +33,5 @@ export default function App() {
     </div>
   )
 }
+
+export default App

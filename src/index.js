@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals'
 import './index.css'
 
 import { Header, Footer } from './components'
+import Register from './components/Register'
+import Login from './components/Login'
+import Logout from './components/Logout'
 
 const routing = (
   <Router>
@@ -14,6 +17,15 @@ const routing = (
       <Switch>
         <Route exact path='/'>
           <App />
+        </Route>
+        <Route path='/register'>
+          <Register />
+        </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
+        <Route path='/logout'>
+          <Logout />
         </Route>
       </Switch>
       <Footer />
