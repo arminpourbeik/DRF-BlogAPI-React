@@ -9,6 +9,7 @@ import { Header, Footer } from './components'
 import Register from './components/Register'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import Single from './components/Single'
 
 const routing = (
   <Router>
@@ -26,6 +27,9 @@ const routing = (
         </Route>
         <Route path='/logout'>
           <Logout />
+        </Route>
+        <Route path='/post/:slug'>
+          <Single />
         </Route>
       </Switch>
       <Footer />
