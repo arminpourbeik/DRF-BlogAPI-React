@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import { NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 // Material UI
 import AppBar from '@material-ui/core/AppBar'
@@ -8,9 +11,18 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import Button from '@material-ui/core/Button'
+import SearchBar from 'material-ui-search-bar'
 
 function Header() {
   const classes = useStyles()
+  let history = useHistory()
+
+  const [data, setData] = useState({ search: '' })
+
+  function goSearch(e) {
+    history.push({ pathname: '/search/', search: '?search=' + data.search })
+    window.location.reload()
+  }
 
   return (
     <>
@@ -37,6 +49,11 @@ function Header() {
               Blog
             </Link>
           </Typography>
+          <SearchBar
+            value={data.search}
+            onChange={(newValue) => setData({ search: newValue })}
+            onRequestSearch={() => goSearch(data.search)}
+          />
           <nav>
             <Link
               color='textPrimary'

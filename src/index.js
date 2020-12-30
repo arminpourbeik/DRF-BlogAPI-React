@@ -10,6 +10,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Single from './components/Single'
+import Search from './components/Search'
 
 const routing = (
   <Router>
@@ -30,6 +31,9 @@ const routing = (
         </Route>
         <Route path='/post/:slug'>
           <Single />
+        </Route>
+        <Route path='/search'>
+          <Search />
         </Route>
       </Switch>
       <Footer />
