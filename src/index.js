@@ -12,6 +12,11 @@ import Logout from './components/Logout'
 import Single from './components/Single'
 import Search from './components/Search'
 
+import Admin from './components/Admin'
+import Create from './components/admin/Create'
+import Edit from './components/admin/Edit'
+import Delete from './components/admin/Delete'
+
 const routing = (
   <Router>
     <React.StrictMode>
@@ -35,6 +40,14 @@ const routing = (
         <Route path='/search'>
           <Search />
         </Route>
+        <Route exact path='/admin'>
+          <Admin />
+        </Route>
+        <Route exact path='/admin/create'>
+          <Create />
+        </Route>
+        <Route exact path='/admin/edit/:id' children={<Edit />} />
+        <Route exact path='/admin/delete/:id' children={<Delete />} />
       </Switch>
       <Footer />
     </React.StrictMode>
